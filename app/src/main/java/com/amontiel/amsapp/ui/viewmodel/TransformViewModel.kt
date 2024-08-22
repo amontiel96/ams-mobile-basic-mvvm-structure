@@ -1,4 +1,4 @@
-package com.amontiel.amsapp.ui.transform
+package com.amontiel.amsapp.ui.viewmodel
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
@@ -13,4 +13,12 @@ class TransformViewModel : ViewModel() {
     }
 
     val texts: LiveData<List<String>> = _texts
+
+    private val _isLoading = MutableLiveData<Boolean>()
+    val isLoading: LiveData<Boolean> get() = _isLoading
+
+    // Método para cambiar el estado de carga
+    fun setLoading(isLoading: Boolean) {
+        _isLoading.value = isLoading
+    }
 }

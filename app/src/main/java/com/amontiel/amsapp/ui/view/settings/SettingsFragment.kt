@@ -1,4 +1,4 @@
-package com.amontiel.amsapp.ui.settings
+package com.amontiel.amsapp.ui.view.settings
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -8,6 +8,7 @@ import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.amontiel.amsapp.databinding.FragmentSettingsBinding
+import com.amontiel.amsapp.ui.viewmodel.SettingsViewModel
 
 class SettingsFragment : Fragment() {
 
@@ -30,8 +31,12 @@ class SettingsFragment : Fragment() {
 
         val textView: TextView = binding.textSettings
         settingsViewModel.text.observe(viewLifecycleOwner) {
+            System.out.println("amsdev entra al obersver")
             textView.text = it
         }
+
+        settingsViewModel.updateText("amsdev")
+        settingsViewModel.editEmail.postValue("amsdev with post")
         return root
     }
 

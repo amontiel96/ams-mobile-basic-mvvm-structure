@@ -1,4 +1,4 @@
-package com.amontiel.amsapp.ui.transform
+package com.amontiel.amsapp.ui.view.transform
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -15,6 +15,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.amontiel.amsapp.R
 import com.amontiel.amsapp.databinding.FragmentTransformBinding
 import com.amontiel.amsapp.databinding.ItemTransformBinding
+import com.amontiel.amsapp.ui.viewmodel.TransformViewModel
 
 /**
  * Fragment that demonstrates a responsive layout pattern where the format of the content
