@@ -1,2 +1,4 @@
-# ams-mobile-messages
-App to read messages from a Firebase list in real time, in this project I show you how to create an app with MVVM with connection to Firebase
+# ams-mobile-basic-mvvm-structure
+
+This app shows the basic structure of a mobile app using MVVM with Data and View Binding.
+
