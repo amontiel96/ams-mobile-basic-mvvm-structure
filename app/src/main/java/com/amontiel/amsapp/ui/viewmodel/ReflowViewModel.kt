@@ -11,5 +11,5 @@ class ReflowViewModel : ViewModel() {
     }
     val text: LiveData<String> = _text
 
-    val txtRefowTitle = MutableLiveData<String>().apply { value = "valor inicial desde el view model" }
+    val txtReflowTitle = MutableLiveData<String>().apply { value = "valor inicial desde el view model" }
 }

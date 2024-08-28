@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.core.content.res.ResourcesCompat
+import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.DiffUtil
@@ -37,8 +38,9 @@ class TransformFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         val transformViewModel = ViewModelProvider(this).get(TransformViewModel::class.java)
-        _binding = FragmentTransformBinding.inflate(inflater, container, false)
-        val root: View = binding.root
+        _binding = DataBindingUtil.inflate(inflater,R.layout.fragment_transform, container, false)
+        _binding?.viewModel = transformViewModel
+
 
         val recyclerView = binding.recyclerviewTransform
         val adapter = TransformAdapter()
@@ -46,7 +48,7 @@ class TransformFragment : Fragment() {
         transformViewModel.texts.observe(viewLifecycleOwner) {
             adapter.submitList(it)
         }
-        return root
+        return binding.root
     }
 
     override fun onDestroyView() {
