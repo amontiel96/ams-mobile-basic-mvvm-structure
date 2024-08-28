@@ -16,5 +16,5 @@ class SettingsViewModel : ViewModel() {
         _text.value = newText
     }
 
-    val editEmail = MutableLiveData<String>("")
+    val txtSettingTitle = MutableLiveData<String>("Setting View model")
 }

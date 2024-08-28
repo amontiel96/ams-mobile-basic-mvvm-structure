@@ -5,9 +5,12 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import com.amontiel.amsapp.R
 import com.amontiel.amsapp.databinding.FragmentSettingsBinding
+import com.amontiel.amsapp.ui.viewmodel.ReflowViewModel
 import com.amontiel.amsapp.ui.viewmodel.SettingsViewModel
 
 class SettingsFragment : Fragment() {
@@ -23,21 +26,20 @@ class SettingsFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
+
+
         val settingsViewModel =
             ViewModelProvider(this).get(SettingsViewModel::class.java)
 
-        _binding = FragmentSettingsBinding.inflate(inflater, container, false)
-        val root: View = binding.root
+        // Usar Data Binding para inflar el layout y vincular el ViewModel
+        _binding = DataBindingUtil.inflate(inflater, R.layout.fragment_settings, container, false)
+        _binding?.viewModel = settingsViewModel
+        _binding?.lifecycleOwner = viewLifecycleOwner
 
-        val textView: TextView = binding.textSettings
-        settingsViewModel.text.observe(viewLifecycleOwner) {
-            System.out.println("amsdev entra al obersver")
-            textView.text = it
-        }
+        // Usar View Binding para acceder a otras vistas si es necesario
+        // Ejemplo: binding.textReflow.text = "Texto con View Binding"
 
-        settingsViewModel.updateText("amsdev")
-        settingsViewModel.editEmail.postValue("amsdev with post")
-        return root
+        return binding.root
     }
 
     override fun onDestroyView() {
