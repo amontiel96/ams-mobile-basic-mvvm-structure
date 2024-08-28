@@ -11,5 +11,5 @@ class SlideshowViewModel : ViewModel() {
     }
     val text: LiveData<String> = _text
 
-    val txtSlideTitle = MutableLiveData<String>().apply { value="title slide from viewmodel" }
+    val txtSlideTitle = MutableLiveData<String>().apply { value="slideshow from viewmodel" }
 }

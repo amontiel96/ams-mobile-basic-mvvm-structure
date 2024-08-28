@@ -16,5 +16,5 @@ class SettingsViewModel : ViewModel() {
         _text.value = newText
     }
 
-    val txtSettingTitle = MutableLiveData<String>("Setting View model")
+    val txtSettingTitle = MutableLiveData<String>("Setting from View model")
 }

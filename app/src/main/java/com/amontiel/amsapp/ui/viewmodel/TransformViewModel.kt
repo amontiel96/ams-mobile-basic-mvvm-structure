@@ -14,11 +14,5 @@ class TransformViewModel : ViewModel() {
 
     val texts: LiveData<List<String>> = _texts
 
-    private val _isLoading = MutableLiveData<Boolean>()
-    val isLoading: LiveData<Boolean> get() = _isLoading
-
-    // Método para cambiar el estado de carga
-    fun setLoading(isLoading: Boolean) {
-        _isLoading.value = isLoading
-    }
+    val isListVisible = MutableLiveData<Boolean>().apply { value = true }
 }

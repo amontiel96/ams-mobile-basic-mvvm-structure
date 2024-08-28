@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
-
+        <import type="android.view.View" />
         <variable
             name="viewModel"
             type="com.amontiel.amsapp.ui.viewmodel.TransformViewModel" />
@@ -14,5 +14,6 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layoutManager="LinearLayoutManager"
+        android:visibility="@{viewModel.isListVisible() ? View.VISIBLE : View.GONE}"
         tools:context=".ui.view.transform.TransformFragment" />
 </layout>
